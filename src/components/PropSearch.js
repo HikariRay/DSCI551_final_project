@@ -1,7 +1,9 @@
 import React, { useEffect,useState } from 'react';
 import firebase from '../firebase';
 import PropCrime from './PropCrime';
-
+import Button from '@material-ui/core/Button';
+import Typography from "@material-ui/core/Typography";
+import Input from '@material-ui/core/Input';
 
 export default function PropSearch(){
     const [propList,setPropList]=useState();
@@ -48,9 +50,9 @@ export default function PropSearch(){
 
     return (
     <div>
-        <h1>Search Proprety</h1>
-        <input type="text" placeholder="Search" onChange={handleOnChange} value={name} />
-        <button onClick={searchProp}>Search Property Name</button>
+        <Typography variant="h4" gutterBottom>Search Property</Typography>
+        <Input type="text" placeholder="Search Here" onChange={handleOnChange} value={name} />
+        <Button variant="contained" color="primary" onClick={searchProp}> Search Property Name</Button>
         {propList ? propList.map((prop,index)=><PropCrime prop={prop} key={index}/>) :''}
     </div>
     );
