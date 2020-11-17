@@ -1,5 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import firebase from '../firebase';
+import PropCrime from './PropCrime';
+
 
 export default function PropList(){
     const [propList,setPropList]=useState();
@@ -18,9 +20,7 @@ export default function PropList(){
     },[]);
     return (
     <div>
-        {propList ? propList.map((prop)=>( 
-        <h1>{prop.name}</h1>)
-        ) :''}
+        {propList ? propList.map((prop,index)=><PropCrime prop={prop} key={index}/>) :''}
     </div>
     );
 }
