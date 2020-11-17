@@ -4,6 +4,7 @@ import PropCrime from './PropCrime';
 import Button from '@material-ui/core/Button';
 import Typography from "@material-ui/core/Typography";
 import Input from '@material-ui/core/Input';
+import Box from "@material-ui/core/Box";
 
 export default function PropSearch(){
     const [propList,setPropList]=useState();
@@ -50,7 +51,9 @@ export default function PropSearch(){
 
     return (
     <div>
-        <Typography variant="h4" gutterBottom>Search Property</Typography>
+        <Typography variant="h4" gutterBottom><Box color="white" fontWeight="fontWeightBold" m={1}>
+         Search property
+      </Box></Typography>
         <Input type="text" placeholder="Search Here" onChange={handleOnChange} value={name} />
         <Button variant="contained" color="primary" onClick={searchProp}> Search Property Name</Button>
         {propList ? propList.map((prop,index)=><PropCrime prop={prop} key={index}/>) :''}

@@ -9,11 +9,12 @@ import AddProp from './components/AddProp'
 import 'fontsource-roboto';
 import Typography from "@material-ui/core/Typography";
 import Paper from '@material-ui/core/Paper';
-import Image from './IMG_1579.jpg'; // Import using relative path
-
+import Powerslap from './720p.mp4'
+import Box from '@material-ui/core/Box';
 
 const styles = {
     paperContainer: {
+        position: "absolute",
         width: "100%",
         height: "1000px",
         backgroundImage: `url(${Image})`
@@ -22,17 +23,22 @@ const styles = {
 export default function App(){
 
   return(
-
     <div className='App'>
-        <Paper style={styles.paperContainer}>
-      <Typography variant="h3" color={'blue'} gutterBottom>
-        NYC Airbnb Crime Safety
+       <video autoPlay loop muted style = {{
+           position: "absolute", width: "100%", left: "50%", top: "50%",height: "100%", objectFit: "cover", transform: "translate(-50%,-50%)", zIndex: "-1"}}>
+           <source src={Powerslap} type = 'video/mp4'/>
+               </video>
+      <Typography variant="h3" color={'white'} gutterBottom>
+          <Box fontWeight="fontWeightBold" color="white" m={10}>
+         NYC Airbnb Crime Safety
+      </Box>
+
       </Typography>
       {/* <PropList /> */}
       <PropSearch />
       {/* <Form /> */}
       <AddProp />
-      </Paper>
+
     </div>
   );
 }

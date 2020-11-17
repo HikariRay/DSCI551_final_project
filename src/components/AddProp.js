@@ -1,7 +1,9 @@
-
 import React, { useState } from 'react';
 import firebase from '../firebase';
-
+import Button from '@material-ui/core/Button';
+import Typography from "@material-ui/core/Typography";
+import Input from '@material-ui/core/Input';
+import Box from "@material-ui/core/Box";
 export default function AddProp() {
   const [name, setName] = useState('');
   const [neighbourhood, setNeighbourhood] = useState('');
@@ -25,12 +27,14 @@ export default function AddProp() {
   return (
     
     <div>
-        <h1>Add Proprety Info</h1>
+        <Typography variant="h4" gutterBottom><Box color="white" fontWeight="fontWeightBold" m={1}>
+         Add Property Info
+      </Box></Typography>
         <label>Proprety Name:</label>
-        <input type="text" onChange={handleNameOnChange} value={name} />
-        <label>Proprety Neighbourhood:</label>
-        <input type="text" onChange={handleNeighbourhoodOnChange} value={neighbourhood} />
-        <button onClick={createProp}>Add Proprety</button>
+        <Input type="text"  onChange={handleNameOnChange} value={name} />
+        <label color="white">Proprety Neighbourhood:</label>
+        <Input type="text"  onChange={handleNeighbourhoodOnChange} value={neighbourhood} />
+        <Button variant="contained" color="primary" onClick={createProp}> Add Proprety</Button>
     </div>
   );
 }
