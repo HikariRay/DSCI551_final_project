@@ -12,6 +12,8 @@ import Typography from "@material-ui/core/Typography";
 import Paper from '@material-ui/core/Paper';
 import Powerslap from './720p.mp4'
 import Box from '@material-ui/core/Box';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const styles = {
     paperContainer: {
